@@ -1,51 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sketch Layout</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6e6ee.js" crossorigin="anonymous"></script>
   <style>
-    /* Basic styles just for layout clarity */
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    header, footer {
-      background-color: #f0f0f0;
-      padding: 1rem;
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
     }
 
-    header .nav, footer .footer-content {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 45px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      height: 400px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 8px;
     }
 
     main {
       padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .box {
-      background-color: #e0e0e0;
+      background-color: #e0f0ff;
       padding: 2rem;
-      margin-bottom: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
     }
 
     .text-section {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .button-group {
+      margin-bottom: 2rem;
     }
 
     .button-group button {
-      margin-right: 1rem;
+      background-color: #0078d4;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .button-group button:hover {
+      background-color: #005a9e;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
     .image-gallery img {
-      margin-right: 1rem;
-      border-radius: 4px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .social-icons i {
+      margin: 0 0.5rem;
+      font-size: 1.3rem;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .social-icons i:hover {
+      color: #00bfff;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .image-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -53,45 +173,29 @@
 
   <!-- Header -->
   <header>
-    <nav class="nav">
-      <span class="logo"><strong>Logo</strong></span>
-      <div class="menu">
-        <a href="#">Menu 1</a>
-        <a href="#">Menu 2</a>
-      </div>
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo">
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>We Build Digital Experiences</h1>
+  </section>
 
   <!-- Main Content -->
   <main>
     <section class="box">
-      [ Box Content — could be a banner, video, or form ]
+      We help brands connect with their audience through design, storytelling, and technology.
     </section>
 
     <section class="text-section">
-      <p>Text goes here... You can write a description, intro text, or any kind of content.</p>
-    </section>
+      <p>
+        Our creative studio specializes in UI/UX design, web development, and branding. We believe design should be functional, intuitive, and beautiful. Whether you're launching a product or refreshing your image — we
 
-    <section class="button-group">
-      <button type="button">Map</button>
-      <button type="button">Facebook</button>
-      <button type="button">Instagram</button>
-    </section>
-
-    <section class="image-gallery">
-      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dnaindia.com%2Fworld%2Freport-pm-k-p-sharma-oli-faction-accepts-nepal-sc-s-verdict-ruling-party-may-split-2877570&psig=AOvVaw0pm3m9Cpf6fWHqWAwEW2Ug&ust=1744604993891000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJCRup2W1IwDFQAAAAAdAAAAABAE" alt="Image 1" width="100" height="100">
-      <img src="#" alt="Image 2" width="100" height="100">
-      <img src="#" alt="Image 3" width="100" height="100">
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <span>&copy; 2025 Your Company ALL COPYRIGHT</span>
-      <span>24/7 Contact Info: +123 456 7890</span>
-    </div>
-  </footer>
-
-</body>
-</html>
